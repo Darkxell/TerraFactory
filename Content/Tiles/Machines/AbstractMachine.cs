@@ -105,28 +105,12 @@ namespace TerraFactory.Content.Tiles.Machines
             if (MiscUtils.TryGetTileEntityAs(i, j, out AbstractMachineTE entity))
             {
 
-                // Builds the content text chat thing
-                SoundEngine.PlaySound(SoundID.Mech, new Vector2(i * 16, j * 16));
-                StringBuilder sb = new StringBuilder();
-                sb.Append("Machine content : ");
-                if (entity.content.Count <= 0)
-                {
-                    sb.Append("empty ");
-                }
-                else
-                {
-                    foreach (FastItemStack itm in entity.content)
-                    {
-                        sb.Append(itm.toString() + " ");
-                    }
-                }
-
                 if (entity is GunTurretTE)
                 {
-                    sb.Append("(Turret ammo : " + ((GunTurretTE)entity).ammo + "/" + ((GunTurretTE)entity).max_ammo + ") ");
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append("Turret ammo : " + ((GunTurretTE)entity).ammo + "/" + ((GunTurretTE)entity).max_ammo);
+                    Main.NewText(sb.ToString());
                 }
-
-                Main.NewText(sb.ToString());
 
                 // Opens the Machine side UI
                 GlobalMachineUI ui = ModContent.GetInstance<GlobalMachineUI>();
@@ -141,9 +125,6 @@ namespace TerraFactory.Content.Tiles.Machines
                     else
                         ui.ShowMachineUI(entity);
                 }
-
-
-
 
                 return true;
             }

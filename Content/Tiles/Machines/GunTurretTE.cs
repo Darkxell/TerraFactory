@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework;
 using Mono.Cecil;
 using Terraria.ID;
 using TerraFactory.Content.Utils;
+using TerraFactory.Content.Items;
 
 namespace TerraFactory.Content.Tiles.Machines
 {
@@ -116,6 +117,11 @@ namespace TerraFactory.Content.Tiles.Machines
         public override string getDisplayName()
         {
             return "Gun turret";
+        }
+
+        public override int[] getItemInputsList()
+        {
+            return new int[] { ItemID.LeadBar };
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TerraFactory.Content.Global;
 using TerraFactory.Content.Utils;
 using Terraria;
 using Terraria.DataStructures;
@@ -113,6 +114,12 @@ namespace TerraFactory.Content.Tiles.Machines
         public override string getDisplayName()
         {
             return "Mechanical furnace";
+        }
+
+        public override int[] getItemInputsList()
+        {
+            return new int[] { ItemID.IronOre, ItemID.CopperOre, ItemID.GoldOre, ItemID.SilverOre,
+                ItemID.TinOre, ItemID.LeadOre, ItemID.TungstenOre, ItemID.PlatinumOre };
         }
     }
 

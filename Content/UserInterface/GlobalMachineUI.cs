@@ -15,6 +15,7 @@ using Terraria.ID;
 using Terraria.GameContent.UI;
 using Terraria.GameContent.UI.Elements;
 using TerraFactory.Content.Tiles.Machines;
+using TerraFactory.Content.Utils;
 
 namespace TerraFactory.Content.UserInterface
 {
@@ -122,6 +123,7 @@ namespace TerraFactory.Content.UserInterface
         UIPanel background;
         UIText header1;
         UIText recepietext;
+        UIText inventoryList;
 
         public override void OnInitialize()
         {
@@ -139,8 +141,13 @@ namespace TerraFactory.Content.UserInterface
 
             UIText header2 = new UIText("Inventory", textScale: 1.5f);
             header2.HAlign = 0.5f;
-            header2.Top.Set(110, 0);
+            header2.Top.Set(100, 0);
             background.Append(header2);
+
+            inventoryList = new UIText("");
+            inventoryList.HAlign = 0.5f;
+            inventoryList.Top.Set(135, 0);
+            background.Append(inventoryList);
 
             recepietext = new UIText("Possible item inputs : ");
             recepietext.Left.Set(30, 0);
@@ -189,7 +196,21 @@ namespace TerraFactory.Content.UserInterface
         public void setInfoFrom(AbstractMachineTE target)
         {
             header1.SetText(target.getDisplayName());
-            recepietext.SetText("Possible item inputs : " + ); 
+
+            // Displays Item input list
+            StringBuilder inputs = new StringBuilder("Possible item inputs : ");
+            int[] mIn = target.getItemInputsList();
+            foreach (int i in mIn) inputs.Append("[i: " + i + "]");
+            recepietext.SetText(inputs.ToString());
+
+            // Displays machine content
+            StringBuilder inventory = new StringBuilder();
+            if (target.content.Count <= 0)
+                inventory.Append("Machine is empty");
+            else
+                foreach (FastItemStack itm in target.content)
+                    inventory.Append(itm.toString() + " ");
+            inventoryList.SetText(inventory.ToString());
         }
 
         protected override void DrawSelf(SpriteBatch spriteBatch)

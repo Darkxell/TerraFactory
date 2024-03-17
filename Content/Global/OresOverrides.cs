@@ -7,10 +7,11 @@ using Terraria.ModLoader;
 
 namespace TerraFactory.Content.Global
 {
-    internal class OresOverrides : GlobalTile
+    internal class OresOverrides
     {
-
-
+        /// <summary>
+        /// An array of all ore tile IDs
+        /// </summary>
         public static int[] ORES_IDS = new int[] {
             // ---- VANILLA ORE IDS ----
             6, 7, 8, 9, /* iron, copper, gold, silver */
@@ -22,19 +23,6 @@ namespace TerraFactory.Content.Global
             // ---- TERRAFACTORY ORE IDS ----
 
         };
-
-        public override void KillTile(int i, int j, int type, ref bool fail, ref bool effectOnly, ref bool noItem)
-        {
-            if (ORES_IDS.Contains(type))
-            {
-                bool mustfail = true;
-                //base.KillTile(i, j, type, ref mustfail, ref effectOnly, ref noItem);
-            }
-            else
-            {
-                //base.KillTile(i, j, type, ref fail, ref effectOnly, ref noItem);
-            }
-        }
 
     }
 }
