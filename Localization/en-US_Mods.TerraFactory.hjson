@@ -60,6 +60,15 @@ Items: {
 		DisplayName: Debug Sword
 		Tooltip: Meant to test projectiles... Where did you find this?
 	}
+
+	ItemVoid: {
+		DisplayName: Item Void
+		Tooltip:
+			'''
+			Unobtainable item for interface purposes
+			Has no use in game, usually denotes the lack of an item in a recepie
+			'''
+	}
 }
 
 Tiles.HardLead.MapEntry: Hard Lead ore

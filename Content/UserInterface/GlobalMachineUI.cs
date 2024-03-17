@@ -121,6 +121,7 @@ namespace TerraFactory.Content.UserInterface
     {
         UIPanel background;
         UIText header1;
+        UIText recepietext;
 
         public override void OnInitialize()
         {
@@ -141,7 +142,7 @@ namespace TerraFactory.Content.UserInterface
             header2.Top.Set(110, 0);
             background.Append(header2);
 
-            UIText recepietext = new UIText("Current recepie : undefined");
+            recepietext = new UIText("Possible item inputs : ");
             recepietext.Left.Set(30, 0);
             recepietext.Top.Set(50, 0);
             background.Append(recepietext);
@@ -188,6 +189,7 @@ namespace TerraFactory.Content.UserInterface
         public void setInfoFrom(AbstractMachineTE target)
         {
             header1.SetText(target.getDisplayName());
+            recepietext.SetText("Possible item inputs : " + ); 
         }
 
         protected override void DrawSelf(SpriteBatch spriteBatch)

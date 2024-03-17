@@ -9,6 +9,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Content\Items\AbstractMachine.png" />
+    <None Remove="Content\Items\ItemVoid.png" />
     <None Remove="Content\Items\Placeable\GunTurret.png" />
     <None Remove="Content\Items\Placeable\Inserter.png" />
     <None Remove="Content\Items\Placeable\miningdrill.png" />

@@ -7,6 +7,7 @@ using Terraria.DataStructures;
 using Terraria;
 using Terraria.ModLoader;
 using TerraFactory.Content.Utils;
+using TerraFactory.Content.Items;
 
 namespace TerraFactory.Content.Tiles.Machines
 {
@@ -67,6 +68,15 @@ namespace TerraFactory.Content.Tiles.Machines
         public virtual string getDisplayName()
         {
             return "Abstract machine";
+        }
+
+        /// <returns>
+        /// An array of item IDs that are accepted by this machine as inputs.
+        /// Doesn't garentee the machine will do anything with it, but allows players and inserters to put this type in it.
+        /// </returns>
+        public virtual int[] getItemInputsList()
+        {
+            return new int[] { ModContent.ItemType<ItemVoid>() };
         }
 
     }
