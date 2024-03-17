@@ -33,7 +33,7 @@ namespace TerraFactory.Content.UserInterface
         /// The current display target of this interface. 
         /// May be null, in which case the UI should close.
         /// </summary>
-        private AbstractMachineTE currentDisplay = null;
+        public AbstractMachineTE currentDisplay = null;
 
         public override void Load()
         {
@@ -160,6 +160,7 @@ namespace TerraFactory.Content.UserInterface
             depositbutton.Height.Set(50, 0);
             depositbutton.Left.Set(30, 0);
             depositbutton.Top.Set(185, 0);
+            depositbutton.OnLeftClick += deposit;
             background.Append(depositbutton);
 
             UIText depositText = new UIText("Deposit");
@@ -234,6 +235,21 @@ namespace TerraFactory.Content.UserInterface
         {
             SoundEngine.PlaySound(SoundID.MenuClose);
             ModContent.GetInstance<GlobalMachineUI>().HideMachineUI();
+        }
+
+        /// <summary>
+        /// Deposits the cursor item in the currently opened machine
+        /// </summary>
+        public void deposit(UIMouseEvent evt, UIElement listeningElement)
+        {
+            Item cursoritem = Main.player[Main.myPlayer].inventory[58];
+            if (cursoritem == null || cursoritem.stack <= 0) return;
+            AbstractMachineTE destination = ModContent.GetInstance<GlobalMachineUI>().currentDisplay;
+            if (destination == null) return;
+
+            destination.addFastItem(new FastItemStack(cursoritem.type, cursoritem.stack));
+            cursoritem.stack = 0;
+            Main.mouseItem.stack = 0;
         }
     }
 
