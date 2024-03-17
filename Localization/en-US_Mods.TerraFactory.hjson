@@ -1,0 +1,65 @@
+Items: {
+	Cookbook: {
+		DisplayName: Engineer's cookbook
+		Tooltip:
+			'''
+			A library of knowledge from parallel universes, in book form
+			Convenient to read, just left click
+			[Work in progress]
+			'''
+	}
+
+	ChemicalPlant: {
+		DisplayName: Chemical Plant
+		Tooltip: Used to mix different chemicals in powder and liquid form
+	}
+
+	MechanicalFurnace: {
+		DisplayName: Mechanical Furnace
+		Tooltip:
+			'''
+			Used to smelt ores and make bars
+			Inefficient, but easy
+			'''
+	}
+
+	MiningDrill: {
+		DisplayName: Mining Drill
+		Tooltip:
+			'''
+			Place above an ore patch to start excavating!
+			You cannot mine ores by hand in TerraFactory
+			Only naturally generated ores work
+			'''
+	}
+
+	AbstractMachine: {
+		DisplayName: Abstract Machine
+		Tooltip: A debug only machine, does nothing
+	}
+
+	Inserter: {
+		DisplayName: Inserter
+		Tooltip:
+			'''
+			Transfers items between adjacent machines, horizontally
+			Takes from machines with many items, puts in machines with few
+			'''
+	}
+
+	GunTurret: {
+		DisplayName: Gun Turret
+		Tooltip:
+			'''
+			Crafts its own ammunition and disposes of nearby threats
+			Needs a constant supply of lead bars
+			'''
+	}
+
+	DebugSword: {
+		DisplayName: Debug Sword
+		Tooltip: Meant to test projectiles... Where did you find this?
+	}
+}
+
+Tiles.HardLead.MapEntry: Hard Lead ore

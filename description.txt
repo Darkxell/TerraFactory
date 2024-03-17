@@ -1,0 +1,6 @@
+Terra factory is a large overhaul mod for terraria where you create a large factory to create resources, and defend your base against bosses to progress.
+It is not compatible with most other overhaul mods and is a complete shift in playstyle. Do not pair with other mods featuring world generation, it won't work.
+
+The mod is currently in development, this version is an InDev playable vertical slice.
+
+Please come back later!

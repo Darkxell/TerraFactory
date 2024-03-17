@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "p8bzAWb/Toj734/r4g62CU/Leme6g11dTE2HldhFkSl9txzgZ5KMD9/eBqs2XEdQz5EVhQzEbhFahgPhkXtK0w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Nicolas\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\TerraFactory\\TerraFactory.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Nicolas\\.nuget\\packages\\tmodloader.codeassist\\0.1.5\\tmodloader.codeassist.0.1.5.nupkg.sha512"
+  ],
+  "logs": []
+}

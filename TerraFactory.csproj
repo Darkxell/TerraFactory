@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\tModLoader.targets" />
+  <PropertyGroup>
+    <AssemblyName>TerraFactory</AssemblyName>
+    <TargetFramework>net6.0</TargetFramework>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Content\Items\AbstractMachine.png" />
+    <None Remove="Content\Items\Placeable\GunTurret.png" />
+    <None Remove="Content\Items\Placeable\Inserter.png" />
+    <None Remove="Content\Items\Placeable\miningdrill.png" />
+    <None Remove="Content\Items\Weapons\DebugSword.png" />
+    <None Remove="Content\Menu\ExampleBiomeSurfaceClose.png" />
+    <None Remove="Content\Menu\ExampleBiomeSurfaceFar.png" />
+    <None Remove="Content\Menu\ExampleBiomeSurfaceMid0.png" />
+    <None Remove="Content\Menu\ExampleBiomeSurfaceMid1.png" />
+    <None Remove="Content\Menu\ExampleBiomeSurfaceMid2.png" />
+    <None Remove="Content\Menu\ExampleBiomeSurfaceMid3.png" />
+    <None Remove="Content\Menu\MenuLogo.png" />
+    <None Remove="Content\Menu\MenuMoon.png" />
+    <None Remove="Content\Menu\MenuSun.png" />
+    <None Remove="Content\Menu\MetalSheet.png" />
+    <None Remove="Content\Tiles\HardOres\HardAdamantite.png" />
+    <None Remove="Content\Tiles\HardOres\HardChlorophyte.png" />
+    <None Remove="Content\Tiles\HardOres\HardCobalt.png" />
+    <None Remove="Content\Tiles\HardOres\HardCopper.png" />
+    <None Remove="Content\Tiles\HardOres\HardCrimtane.png" />
+    <None Remove="Content\Tiles\HardOres\HardDemonite.png" />
+    <None Remove="Content\Tiles\HardOres\HardGold.png" />
+    <None Remove="Content\Tiles\HardOres\HardHellstone.png" />
+    <None Remove="Content\Tiles\HardOres\HardIron.png" />
+    <None Remove="Content\Tiles\HardOres\HardLead.png" />
+    <None Remove="Content\Tiles\HardOres\HardLuminite.png" />
+    <None Remove="Content\Tiles\HardOres\HardMeteorite.png" />
+    <None Remove="Content\Tiles\HardOres\HardMythril.png" />
+    <None Remove="Content\Tiles\HardOres\HardOrichalcum.png" />
+    <None Remove="Content\Tiles\HardOres\HardPalladium.png" />
+    <None Remove="Content\Tiles\HardOres\HardPlatinum.png" />
+    <None Remove="Content\Tiles\HardOres\HardSilver.png" />
+    <None Remove="Content\Tiles\HardOres\HardTin.png" />
+    <None Remove="Content\Tiles\HardOres\HardTitanium.png" />
+    <None Remove="Content\Tiles\HardOres\HardTungsten.png" />
+    <None Remove="Content\Tiles\HardOres\TrueVoid.png" />
+    <None Remove="Content\Tiles\Machines\Inserter.png" />
+    <None Remove="Content\Tiles\Machines\MechanicalFurnace.png" />
+    <None Remove="Content\Tiles\Machines\MiningDrill.png" />
+    <None Remove="Content\UserInterface\MachineUI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="tModLoader.CodeAssist" Version="0.1.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="lib\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="StructureHelper">
+      <HintPath>lib\StructureHelper.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

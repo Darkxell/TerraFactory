@@ -1,0 +1,7 @@
+displayName = Terra factory
+author = Darkxell
+version = 0.3
+
+dllReferences = StructureHelper
+
+modReferences = Lights, MagicStorage
