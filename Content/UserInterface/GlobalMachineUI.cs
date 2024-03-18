@@ -16,6 +16,7 @@ using Terraria.GameContent.UI;
 using Terraria.GameContent.UI.Elements;
 using TerraFactory.Content.Tiles.Machines;
 using TerraFactory.Content.Utils;
+using Terraria.DataStructures;
 
 namespace TerraFactory.Content.UserInterface
 {
@@ -174,6 +175,7 @@ namespace TerraFactory.Content.UserInterface
             takeallbutton.Height.Set(50, 0);
             takeallbutton.Left.Set(100, 0);
             takeallbutton.Top.Set(185, 0);
+            takeallbutton.OnLeftClick += empty;
             background.Append(takeallbutton);
 
             UIText takeAllText = new UIText("Take all");
@@ -250,6 +252,29 @@ namespace TerraFactory.Content.UserInterface
             destination.addFastItem(new FastItemStack(cursoritem.type, cursoritem.stack));
             cursoritem.stack = 0;
             Main.mouseItem.stack = 0;
+        }
+
+        /// <summary>
+        /// Empties this machine and dumps its content on the floor in item form
+        /// </summary>
+        public void empty(UIMouseEvent evt, UIElement listeningElement)
+        {
+            AbstractMachineTE source = ModContent.GetInstance<GlobalMachineUI>().currentDisplay;
+            if (source == null || source.content == null || source.content.Count() <= 0) return;
+
+            Tile tile = Main.tile[source.Position.X, source.Position.Y];
+            if (tile == null || !tile.HasTile) return;
+            ModTile mtile = TileLoader.GetTile(tile.TileType);
+
+            if (mtile is not AbstractMachine) return;
+            AbstractMachine machine = (AbstractMachine)mtile;
+
+            foreach (FastItemStack item in source.content)
+            {
+                Item.NewItem(null, new Vector2((source.Position.X + machine.machine_Width / 2) * 16, (source.Position.Y + machine.machine_Height / 2) * 16),
+                    item.itemID, Stack: item.quantity, noGrabDelay: true);
+            }
+            source.content.Clear();
         }
     }
 
