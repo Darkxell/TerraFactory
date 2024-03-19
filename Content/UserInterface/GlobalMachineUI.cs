@@ -17,6 +17,7 @@ using Terraria.GameContent.UI.Elements;
 using TerraFactory.Content.Tiles.Machines;
 using TerraFactory.Content.Utils;
 using Terraria.DataStructures;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace TerraFactory.Content.UserInterface
 {
@@ -122,6 +123,7 @@ namespace TerraFactory.Content.UserInterface
     class GlobalMachineUIState : UIState
     {
         UIPanel background;
+        UIPanel depositbutton;
         UIText header1;
         UIText recepietext;
         UIText inventoryList;
@@ -156,7 +158,7 @@ namespace TerraFactory.Content.UserInterface
             background.Append(recepietext);
 
             // Deposit items button
-            UIPanel depositbutton = new DepositButton();
+            depositbutton = new DepositButton();
             depositbutton.Width.Set(50, 0);
             depositbutton.Height.Set(50, 0);
             depositbutton.Left.Set(30, 0);
@@ -225,6 +227,12 @@ namespace TerraFactory.Content.UserInterface
                 Main.LocalPlayer.mouseInterface = true;
             }
 
+            // Add help texts
+            if (depositbutton.IsMouseHovering)
+            {
+                Main.hoverItemName = "Place items in the machine here";
+            }
+
             // TODO : add a machine current craft progress bar here
 
 
@@ -249,7 +257,10 @@ namespace TerraFactory.Content.UserInterface
             AbstractMachineTE destination = ModContent.GetInstance<GlobalMachineUI>().currentDisplay;
             if (destination == null) return;
 
+            if (!destination.acceptsItemId(cursoritem.type)) return;
+
             destination.addFastItem(new FastItemStack(cursoritem.type, cursoritem.stack));
+            SoundEngine.PlaySound(SoundID.Grab);
             cursoritem.stack = 0;
             Main.mouseItem.stack = 0;
         }
@@ -274,6 +285,7 @@ namespace TerraFactory.Content.UserInterface
                 Item.NewItem(null, new Vector2((source.Position.X + machine.machine_Width / 2) * 16, (source.Position.Y + machine.machine_Height / 2) * 16),
                     item.itemID, Stack: item.quantity, noGrabDelay: true);
             }
+            SoundEngine.PlaySound(SoundID.Grab);
             source.content.Clear();
         }
     }

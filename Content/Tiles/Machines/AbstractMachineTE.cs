@@ -79,5 +79,12 @@ namespace TerraFactory.Content.Tiles.Machines
             return new int[] { ModContent.ItemType<ItemVoid>() };
         }
 
+
+        /// <returns>True if this AbstractMachineTE has the specified item ID in its list of possible item inputs</returns>
+        public bool acceptsItemId(int id)
+        {
+            return getItemInputsList().Contains<int>(id);
+        }
+
     }
 }
