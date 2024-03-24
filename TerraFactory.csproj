@@ -10,6 +10,7 @@
   <ItemGroup>
     <None Remove="Content\Items\AbstractMachine.png" />
     <None Remove="Content\Items\ItemVoid.png" />
+    <None Remove="Content\Items\Placeable\Extractor.png" />
     <None Remove="Content\Items\Placeable\GunTurret.png" />
     <None Remove="Content\Items\Placeable\Inserter.png" />
     <None Remove="Content\Items\Placeable\miningdrill.png" />
@@ -45,6 +46,7 @@
     <None Remove="Content\Tiles\HardOres\HardTitanium.png" />
     <None Remove="Content\Tiles\HardOres\HardTungsten.png" />
     <None Remove="Content\Tiles\HardOres\TrueVoid.png" />
+    <None Remove="Content\Tiles\Machines\Extractor.png" />
     <None Remove="Content\Tiles\Machines\Inserter.png" />
     <None Remove="Content\Tiles\Machines\MechanicalFurnace.png" />
     <None Remove="Content\Tiles\Machines\MiningDrill.png" />

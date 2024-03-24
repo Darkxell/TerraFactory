@@ -69,6 +69,15 @@ Items: {
 			Has no use in game, usually denotes the lack of an item in a recepie
 			'''
 	}
+
+	Extractor: {
+		DisplayName: Extractor
+		Tooltip:
+			'''
+			Takes items from adjacent machines and pushes them in pressure pipes for fast transportation
+			Connects with pipes
+			'''
+	}
 }
 
 Tiles.HardLead.MapEntry: Hard Lead ore
