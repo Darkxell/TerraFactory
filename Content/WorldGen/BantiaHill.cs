@@ -45,6 +45,9 @@ internal class BantiaHill : GenPass
                 // Place the tiles below the curves for this column
                 if (j > curveheight)
                 {
+                    if (Main.tile[i, j].HasTile && Main.tile[i, j].TileType == TileID.Stone) 
+                        continue;
+
                     if (j < icelayer)
                     {
                         WorldGen.PlaceTile(i, j, TileID.IceBlock, mute: true, forced: true);
@@ -74,7 +77,18 @@ internal class BantiaHill : GenPass
             if (i >= GenData.Bantia_MineshaftEntrance + 100)
             {
                 snowlayer += 0.5f;
-                icelayer += 0.3f;
+                icelayer += 0.2f;
+
+                if (i > GenData.Bantia_MineshaftEntrance + 200) {
+                    if (i < GenData.Bantia_MineshaftEntrance + 210)
+                        snowlayer += 3f;
+                    else if (i < GenData.Bantia_MineshaftEntrance + 220)
+                        snowlayer += 10f;
+                    else if (i < GenData.Bantia_MineshaftEntrance + 230)
+                        snowlayer += 4f;
+                } 
+                    
+                
             }
 
             // Change the curve velocity 
