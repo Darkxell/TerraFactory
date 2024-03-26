@@ -45,6 +45,35 @@ namespace TerraFactory
 
             spawnMineshaftBlock(5, 7, "Content/Structures/mineshaft-gemroom-x2");
             spawnMineshaftBlock(-13, 7, "Content/Structures/mineshaft-machineroom-x3");
+
+            spawnMineshaftBlock(-14, 8, getRandCorridor());
+            spawnMineshaftBlock(-15, 8, getRandCorridor());
+            spawnMineshaftBlock(-16, 8, "Content/Structures/mineshaft-chainwelltop");
+            spawnMineshaftBlock(-17, 8, getRandCorridor());
+            spawnMineshaftBlock(-18, 8, getRandCorridor());
+            spawnMineshaftBlock(-19, 8, getRandCorridor());
+            spawnMineshaftBlock(-20, 8, getRandCorridor());
+
+            List<string> orerooms = new List<string>();
+            orerooms.Add("Content/Structures/mineshaft-patch-copper");
+            orerooms.Add("Content/Structures/mineshaft-patch-tin");
+            orerooms.Add("Content/Structures/mineshaft-patch-iron");
+            suffleList(orerooms);
+
+            spawnMineshaftBlock(-22, 8, orerooms[0]);
+
+            spawnMineshaftBlock(-16, 9, "Content/Structures/mineshaft-chainwell");
+            spawnMineshaftBlock(-16, 10, "Content/Structures/mineshaft-chainwell");
+            spawnMineshaftBlock(-16, 11, "Content/Structures/mineshaft-chainwell");
+            spawnMineshaftBlock(-16, 12, "Content/Structures/mineshaft-chainwell");
+            spawnMineshaftBlock(-16, 13, "Content/Structures/mineshaft-corridor-chainwell");
+            spawnMineshaftBlock(-17, 13, getRandCorridor());
+            spawnMineshaftBlock(-15, 13, getRandCorridor());
+            spawnMineshaftBlock(-14, 13, getRandCorridor());
+            spawnMineshaftBlock(-13, 13, getRandCorridor());
+
+            spawnMineshaftBlock(-19, 13, orerooms[1]);
+            spawnMineshaftBlock(-12, 13, orerooms[2]);
         }
 
         private void spawnMineshaftBlock(int x, int depth, string block)
@@ -64,6 +93,19 @@ namespace TerraFactory
                 case 2: return "Content/Structures/mineshaft-corridor-rail";
                 case 3: return "Content/Structures/mineshaft-corridor-trap";
                 default: return "Content/Structures/mineshaft-corridor-barrels";
+            }
+        }
+
+        private void suffleList(List<string> toshuffle)
+        {
+            int n = toshuffle.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = WorldGen.genRand.Next(n + 1);
+                string value = toshuffle[k];
+                toshuffle[k] = toshuffle[n];
+                toshuffle[n] = value;
             }
         }
 
