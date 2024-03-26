@@ -78,6 +78,24 @@ Items: {
 			Connects with pipes
 			'''
 	}
+
+	MilkyTea: {
+		DisplayName: Milky Tea
+		Tooltip:
+			'''
+			Summons a ferret pet.
+			Half Water, Half Milk. Loads of Sugar
+			'''
+	}
 }
 
 Tiles.HardLead.MapEntry: Hard Lead ore
+
+Buffs: {
+	FerretBuff: {
+		DisplayName: Cute ferret
+		Description: Half Water, Half Milk. Loads of Sugar
+	}
+}
+
+Projectiles.FerretPetProjectile.DisplayName: Cute ferret

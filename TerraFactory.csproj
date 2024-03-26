@@ -9,6 +9,9 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Content\Items\AbstractMachine.png" />
+    <None Remove="Content\Items\Equipment\FerretPet\FerretBuff.png" />
+    <None Remove="Content\Items\Equipment\FerretPet\FerretPetProjectile.png" />
+    <None Remove="Content\Items\Equipment\MilkyTea.png" />
     <None Remove="Content\Items\ItemVoid.png" />
     <None Remove="Content\Items\Placeable\Extractor.png" />
     <None Remove="Content\Items\Placeable\GunTurret.png" />
